@@ -1,0 +1,213 @@
+/* Переменные для цветов */
+$header-bg-color: #333;
+$info-box-bg-color: #444;
+$info-box-text-color: #6ab04c;
+$header-text-color: #ffffff;
+
+// Путь к фоновому изображению
+$background-image-path: "../images/background.png";
+
+// Базовые стили для страницы
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: url($background-image-path) no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 95vh;
+}
+
+/* Шапка сайта */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0);
+  margin: 40px 70px 0 70px;
+  width: 1440px;
+  height: 40px;
+
+  .header__nav{
+    width: 460px;
+    height: 9px;
+  }
+
+  .header__nav-a {
+    text-decoration: none;
+    color: inherit;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+  }
+
+  &__logo {
+    font-size: 24px;
+  }
+
+  &__nav {
+    a {
+      color: $header-text-color;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+    }
+
+    &--desktop {
+      display: flex;
+    }
+
+    &--mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .header__nav-close {
+        font-size: 24px;
+        color: $header-text-color;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      a {
+        color: $header-text-color;
+        text-decoration: none;
+        margin: 10px 0;
+        font-size: 20px;
+      }
+    }
+  }
+
+  /* Иконка для открытия мобильного меню */
+  &__mobile-menu-icon {
+    display: none;
+    font-size: 24px;
+    color: $header-text-color;
+  }
+}
+
+/* Основной контент */
+.main-content {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  section {
+    width: 100%;
+    height: 114px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-content__title {
+    width: 614px;
+    height: 114px;
+    font-family: Actay Wide, sans-serif;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 113.67px;
+    text-align: center;
+    margin: 40px 333px 0 333px;
+  }
+
+  &__title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}
+
+.info-boxes {
+  width: 1610px;
+  height: 75vh;
+  position: relative;
+}
+
+.info-box {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  color: #F6FFD2;
+  font-size: 16px;
+  width: 286px;
+  height: 60px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  border-top-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  border: 3px solid white;
+}
+
+.info-box:nth-child(1) {
+  top: 150px;
+  left: 70px;
+}
+
+.info-box:nth-child(2) {
+  top: 450px;
+  left: 147px;
+}
+
+.info-box:nth-child(3) {
+  top: 600px;
+  left: 600px;
+}
+
+.info-box:nth-child(4) {
+  top: 300px;
+  left: 525px;
+}
+
+.info-box:nth-child(5) {
+  top: 220px;
+  left: 1200px;
+}
+
+.info-box:nth-child(6) {
+  top: 400px;
+  left: 900px;
+}
+
+.info-number {
+  background-color: #5E7600;
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+p {
+  width: 230px;
+  height: 36px;
+}
+
+/* Медиа-запрос для адаптивности */
+@media (max-width: 768px) {
+  .header__nav--desktop {
+    display: none;
+  }
+
+  .header__mobile-menu-icon {
+    display: block;
+  }
+
+  .header__nav--mobile.open {
+    display: flex;
+  }
+}
